@@ -6,15 +6,12 @@
 	from pyspark.sql import SparkSession
 	spark = SparkSession.builder.appName("Some name").getOrCreate()
 
-
 	df = spark.read.option("header",True).csv('s3://adderss')
 	df.show()
-
 
 	# option - inferschema => infers the data type on it's own, otherwise considers everything as a string
 	df = spark.read.option("inferSchema", True).option("header",True).csv('s3://adderss')
 	df.printSchema()
-
 
 	df = spark.read.option(inferSchema='True', header='True').csv('s3://adderss')
 	```
@@ -85,5 +82,45 @@
 	StructField("marks", IntegerType(), True)])
 	
 	dfRdd = spark.createDataFrame(rdd, schema = own_schema)
-	dfRdd,show()
+	dfRdd.show()
 	```
+	
+---------------
+
+- Select DF columns
+
+	```
+	# creating and reading df
+	from pyspark.sql import SparkSession
+	spark = SparkSession.builder.appName("Some name").getOrCreate()
+
+
+	df = spark.read.option("header",True).csv('s3://adderss')
+	df.show()
+	```
+	
+	```
+	# select based on column names
+	df.select("name", "roll").show()
+	
+	#another method
+	df.select(df.name, df.gender).show()
+	```
+	
+	```
+	# using col name
+	from pyspark.sql.functions import col
+	df.select(col("name"), col("gender")).show()
+	```
+	
+	```
+	# select all
+	df.select(*).show()
+	
+	# column indexing
+	df.select(df.column(3)).show()
+	
+	# column slicing
+	df.select(df.column[2:4]).show()
+	```
+	
