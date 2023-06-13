@@ -29,7 +29,8 @@
 	own_schema = StructType([
 		StructField("age", IntegerType(), True),
 		StructField("name", StringType(), True),
-		StructField("rollno", StringType(), True), # As we won't perform any arthematic operations on roll no, we keep it as string
+		# As we won't perform any arthematic operations on roll no, we keep it as string
+		StructField("rollno", StringType(), True),
 		StructField("email", StringType(), True),
 		StructField("marks", IntegerType(), True)])
 
