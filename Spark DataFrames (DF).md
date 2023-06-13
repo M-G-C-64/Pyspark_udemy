@@ -46,7 +46,9 @@
 	#creating a sprak session
 	from pyspark.sql import SparkSession
 	spark = SparkSession.builder.appName("new App")
-
+	```
+	
+	```
 	#creating and reading sample RDD (refer RDD.md)
 	from pyspark import SparkConf, SparkContext
 	conf = SparkConf.setAppName("new RDD")
@@ -54,7 +56,9 @@
 	
 	rdd = sc.textFile('s3://file_url')
 	rdd.collect()
+	```
 	
+	```
 	#removing headers
 	headers = rdd.first()
 	rdd = rdd.filter(lambda x: x != header).map
