@@ -52,6 +52,11 @@
 	conf = SparkConf.setAppName("new RDD")
 	sc = SparkContext.getOrCreate(conf)
 	
+	rdd = sc.textFile('s3://file_url')
+	rdd.collect()
 	
+	#removing headers
+	headers = rdd.first()
+	rdd = rdd.filter(lambda x: x != header).map
 	```
 
