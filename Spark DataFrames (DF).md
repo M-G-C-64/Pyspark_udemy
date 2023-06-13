@@ -43,8 +43,8 @@
 
 - Create DF from RDD
 
+	creating a sprak session
 	```
-	#creating a sprak session
 	from pyspark.sql import SparkSession
 	spark = SparkSession.builder.appName("new App")
 	```
