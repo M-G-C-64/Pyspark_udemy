@@ -64,4 +64,26 @@
 	headers = rdd.first()
 	rdd = rdd.filter(lambda x: x != header).map
 	```
+	
+	```
+	# creating DF from RDD providing headers
+	columns = headers.split(',')
+	dfRdd = rdd.toDF(columns)
+	dfRdd.show()
+	```
+	
+	```
+	# creating Df from RDD using own scheme
+	from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
+	own_schema = StructType([
+	StructField("age", IntegerType(), True),
+	StructField("name", StringType(), True),
+	# As we won't perform any arthematic operations on roll no, we keep it as string
+	StructField("rollno", StringType(), True),
+	StructField("email", StringType(), True),
+	StructField("marks", IntegerType(), True)])
+	
+	dfRdd = spark.createDataFrame(rdd, schema = own_schema)
+	dfRdd,show()
+	```
