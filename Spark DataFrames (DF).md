@@ -43,14 +43,14 @@
 
 - Create DF from RDD
 
-	creating a sprak session
 	```
+	# creating a sprak session
 	from pyspark.sql import SparkSession
 	spark = SparkSession.builder.appName("new App")
 	```
 	
 	```
-	#creating and reading sample RDD (refer RDD.md)
+	# creating and reading sample RDD (refer RDD.md)
 	from pyspark import SparkConf, SparkContext
 	conf = SparkConf.setAppName("new RDD")
 	sc = SparkContext.getOrCreate(conf)
@@ -60,7 +60,7 @@
 	```
 	
 	```
-	#removing headers
+	# removing headers
 	headers = rdd.first()
 	rdd = rdd.filter(lambda x: x != header).map
 	```
