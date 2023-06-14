@@ -126,7 +126,7 @@
 
 ------
 
-- Manipulating required Columns using **```withColumn()```**
+- Manipulating required Columns using ```withColumn()```
 	
 	```
 	# changing the data type of a column
