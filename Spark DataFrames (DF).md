@@ -133,3 +133,31 @@
 	from pyspark.sql.functions import col
 	df = df.withColumn("roll", col("roll").cast("string"))
 	```
+	
+	```
+	# manipulate data
+	df = df.withColumn("marks", col("marks") + 10)
+	```
+	
+	```
+	# create a new column
+	# using a non-existent column name in withColumn() will create a new column
+	df = df.withColumn("updated_marks", col("marks") + 11)
+	```
+	
+	```
+	# hardcoding a string value in a column
+	from pyspark.sql.functions import col, lit
+	df = df.withColumn("Country", lit("Usa"))
+	```
+	
+	```
+	# renaming a column using withColumn (not preferred)
+	df = df.withColumn("new_column", df["old_column_name"]).drop("old_column_name")
+	```
+	
+------
+
+- Renaming a column using ```.withColumnRenamed()```
+
+	```df = df.withColumnRenamed("old_name", "new_name")```
