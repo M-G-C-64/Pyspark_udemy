@@ -123,4 +123,7 @@
 	# column slicing
 	df.select(df.column[2:4]).show()
 	```
-	
+
+------
+
+- Manipulating required Columns using **```withColumn()```**
