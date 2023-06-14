@@ -163,3 +163,7 @@
 	```
 	df = df.withColumnRenamed("old_name", "new_name")
 	```
+
+------
+
+- Filtering Rows using ```.filter()``` / ```.where()```
