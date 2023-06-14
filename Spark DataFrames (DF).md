@@ -127,3 +127,9 @@
 ------
 
 - Manipulating required Columns using **```withColumn()```**
+	
+	```
+	# changing the data type of a column
+	from pyspark.sql.functions import col
+	df = df.withColumn("roll", col("roll").cast("string"))
+	```
