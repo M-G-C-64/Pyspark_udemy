@@ -173,11 +173,22 @@
 	df.filter(col("name") == "ganesh").show()
 	
 	df.filter((df.gender == "man") & (df.marks > 50))
+	```
 	
+	```
 	# isin()
 	courses_list = ["dsa", "aws", "gcp"]
 	df.filter(df.courses.isin(courses_list)).show()
 	
 	# .startswith("A")
 	# .endswith("A")
+	```
+	
+	```
+	# contains
+	df.filter(df.courses.contains("se")).show()
+	
+	# like
+	# sql notation
+	df.filter(df.courses.like('%se%')).show()
 	```
