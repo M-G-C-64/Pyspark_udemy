@@ -160,4 +160,6 @@
 
 - Renaming a column using ```.withColumnRenamed()```
 
-	```df = df.withColumnRenamed("old_name", "new_name")```
+	```
+	df = df.withColumnRenamed("old_name", "new_name")
+	```
