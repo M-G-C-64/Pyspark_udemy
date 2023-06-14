@@ -223,3 +223,4 @@
 	# dropDuplicates multiple colums
 	df.dropDuplicates(["gender", "course"]).show()
 	```
+	
