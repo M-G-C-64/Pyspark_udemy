@@ -192,3 +192,34 @@
 	# sql notation
 	df.filter(df.courses.like('%se%')).show()
 	```
+	
+-------
+
+- Count
+
+	```
+	# counting
+	df.filter(df.courses == "dsa").count()
+	```
+-------
+
+- Distinct
+
+	```
+	# distinct
+	df.select("gender").distinct().show()
+	```
+	
+-------
+
+- DropDuplicates
+
+	```
+	# drop duplicates single column
+	df.dropDuplicates(["gender"]).show()
+	```
+	
+	```
+	# dropDuplicates multiple colums
+	df.dropDuplicates(["gender", "course"]).show()
+	```
