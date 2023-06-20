@@ -224,3 +224,21 @@
 	df.dropDuplicates(["gender", "course"]).show()
 	```
 	
+---------
+
+- User Defined Functions (udf)
+
+	```
+	from pyspark.sql.functions import udf
+	
+	# sample function
+	def get_total_salary(salary, bonus):
+		return salary + bonus
+		
+	# creating the udf
+	# syntax: my_udf = udf(sample_function, <ReturnType>)
+	total_salary_udf = udf(get_total_salary, IntegerType())
+	
+	# executing
+	df.withColumn("total_salary", total_salary_udf(df.salary, df.bonus)).show()
+	```
