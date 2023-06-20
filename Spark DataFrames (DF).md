@@ -230,6 +230,7 @@
 
 	```
 	from pyspark.sql.functions import udf
+	from pyspark.sql.types import IntegerType
 	
 	# sample function
 	def get_total_salary(salary, bonus):
@@ -242,3 +243,21 @@
 	# executing
 	df.withColumn("total_salary", total_salary_udf(df.salary, df.bonus)).show()
 	```
+
+-------
+
+- Cache
+
+	```
+	# Commonly used when more than one transformation / action is performed
+
+	df = spark.read.csv("header",True).csv('s3://adderss')
+	
+	# without cache, the transformations will read the data twice
+	df.cache()
+	
+	df1 = df.filter(df["age"] > 30)
+	df2 = df.groupBy("city").count()
+	```
+	
+---------
