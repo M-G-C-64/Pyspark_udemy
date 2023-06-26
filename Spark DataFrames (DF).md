@@ -261,3 +261,40 @@
 	```
 	
 ---------
+
+- DF to RDD
+
+	```
+ 	# Convert DF to RDD
+ 	rdd = df.rdd
+ 	```
+
+--------
+
+- DF SQL
+
+  	```
+   	# convert df to view
+    	df.createOrReplaceTempView("student")
+
+   	# Run SQL queries
+   	spark.sql("select * from student where age > 20").show()
+   	```
+
+-------
+
+- Write DF
+
+  	```
+   	# read DF
+   	df = spark.read.option("header",True).csv('s3://adderss')
+
+   	# write DF
+   	df.write.options("header",true).csv("s3://studentData")
+   	```
+   	```
+    	# mode() -> overwrite, append, ignore, error
+    	df.write.mode("overwrite")options("header",true).csv("s3://studentData")
+    	```
+    ```
+ 
