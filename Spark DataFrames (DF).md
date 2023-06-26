@@ -296,5 +296,4 @@
     	# mode() -> overwrite, append, ignore, error
     	df.write.mode("overwrite")options("header",true).csv("s3://studentData")
     	```
-    ```
  
