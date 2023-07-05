@@ -295,5 +295,28 @@
    	```
     	# mode() -> overwrite, append, ignore, error
     	df.write.mode("overwrite")options("header",true).csv("s3://studentData")
-    	```
- 
+    	
+
+--------
+
+- Aggregator
+
+  	```
+   	# .agg()
+   	df.groupBy("department").agg(min("salary"), max("salary")).show()
+   	```
+   
+   	```
+    	# .alias()
+    	df.groupBy("department").agg(min("salary").alias("minimum_salary"), max("salary").alias("maximum_salary).show()
+
+
+    ```
+	    	# .asc()
+	    	# this does not work as "minimum_salary column is not present in original table"
+	    	df.groupBy("department").agg(min("salary").alias("minimum_salary"), max("salary").alias("maximum_salary).orderBy(df.minimum_salary.asc()).show()
+
+   ```
+    	# use col("minimum_salary")
+    	df.groupBy("department").agg(min("salary").alias("minimum_salary"), max("salary").alias("maximum_salary).orderBy(col("minimum_salary"))).show()
+
