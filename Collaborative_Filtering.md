@@ -9,7 +9,7 @@
 
 ### Joining 2 DataFrames
 
-    DF1.join(DF2, 'joining_column_name', 'type_of_join')
+    # DF1.join(DF2, 'joining_column_name', 'type_of_join')
     ratingsDF.join(moviesDF, 'movieID', "left").show()
 
     
