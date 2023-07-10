@@ -10,6 +10,9 @@
 ### Joining 2 DataFrames
 
     # DF1.join(DF2, 'joining_column_name', 'type_of_join')
-    ratingsDF.join(moviesDF, 'movieID', "left").show()
+    ratings = ratingsDF.join(moviesDF, 'movieID', "left").show()
 
+#### Test and Train split
+
+    (train, test) = ratings.randomSplit([0.8, 0.2])
     
