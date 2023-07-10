@@ -21,4 +21,12 @@
     - Alternating Least Squares
     - It's a collaborative filtering model used to predict missing user ratings
     
+- code:
+
+      from pyspark.ml.recommendation import ALS
+      ALS(userCol="", itemCol="", ratingCol="", nonnegative=, implicitPref, coldStartStrategy=)
+  
+    
+
+    
     
