@@ -24,7 +24,17 @@
 - code:
 
       from pyspark.ml.recommendation import ALS
-      ALS(userCol="", itemCol="", ratingCol="", nonnegative=, implicitPref, coldStartStrategy=)
+  
+      # nonnegative -> if the values are all positive ? True : False
+      # implicitPref -> if the ratings are implicit ? True : False
+      # coldStartStrategy -> Operation on completely null users/items
+  
+      ALS(userCol="userId",
+          itemCol="itemId",
+          ratingCol="rating",
+          nonnegative=True,
+          implicitPref=False,
+          coldStartStrategy="drop")
   
     
 
