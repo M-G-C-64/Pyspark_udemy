@@ -15,4 +15,10 @@
 #### Test and Train split
 
     (train, test) = ratings.randomSplit([0.8, 0.2])
+
+#### ALS
+
+    - Alternating Least Squares
+    - It's a collaborative filtering model used to predict missing user ratings
+    
     
