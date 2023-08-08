@@ -38,6 +38,13 @@
 
 #### Hyperparameter Tuning and Cross Validation
 
+        - Optimize model
+        - Create number of models and number of parameter models
+        - param grid builder
+        - regression validator
+        - cross validator
+
+
     
   
     
